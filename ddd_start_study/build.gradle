@@ -1,0 +1,58 @@
+plugins {
+  id 'java'
+  id "io.freefair.lombok" version "${lombokPluginVersion}"
+  id 'org.springframework.boot' version "${springBootVersion}"
+  id 'io.spring.dependency-management' version "${springDependencyManagementVersion}"
+  id 'org.owasp.dependencycheck' version "${dependencyCheckGradlePluginVersion}"
+}
+
+group = 'org.mklinkj.ddd-start-study'
+version = '0.0.1-SNAPSHOT'
+
+java {
+  toolchain {
+    languageVersion = JavaLanguageVersion.of("${javaVersion}")
+  }
+}
+
+compileJava.options.encoding = "${projectEncoding}"
+compileTestJava.options.encoding = "${projectEncoding}"
+
+repositories {
+  mavenCentral()
+  maven { url 'https://repo.spring.io/milestone' }
+}
+
+dependencies {
+  runtimeOnly 'com.mysql:mysql-connector-j'    
+  // runtimeOnly 'com.oracle.database.jdbc:ojdbc11'
+  // runtimeOnly 'org.hsqldb:hsqldb'
+
+  implementation 'org.springframework.boot:spring-boot-starter-web'
+  implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+  
+  implementation 'org.springframework.boot:spring-boot-starter-security'
+  implementation "org.mybatis.spring.boot:mybatis-spring-boot-starter:${mybatisSpringBootStarterVersion}"	
+  implementation 'org.thymeleaf.extras:thymeleaf-extras-springsecurity6'
+  
+  implementation 'org.springframework.boot:spring-boot-starter-mail'  
+  implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+    
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'org.springframework.security:spring-security-test'
+  
+  developmentOnly 'org.springframework.boot:spring-boot-devtools'
+}
+
+tasks.named('test') {
+  /*
+      터미널에서 테스트 클래스 실행 예시
+      > gradlew test --tests *DddStartStudyApplicationTests.contextLoads
+   */
+  useJUnitPlatform()
+  // 터미널에서 테스트 실행시 테스트 실행 로그의 콘솔 출력을 위해 추가
+  testLogging {
+    outputs.upToDateWhen { false }
+    showStandardStreams = true
+  }
+}

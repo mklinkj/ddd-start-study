@@ -1,4 +1,4 @@
-# 도메인 주도 개발 시작하기
+# ✨ 도메인 주도 개발 시작하기 스터디 👺 
 
 ### DDD 핵심 개념 정리부터 구현까지
 
@@ -8,7 +8,7 @@
 * 저자: 최범균
 * 판매처
   * yes24: http://www.yes24.com/Product/Goods/108431347
-  * 교보문고: http://www.kyobobook.co.kr/product/detailViewKor.laf?barcode=9791162245385
+  * 교보문고: https://product.kyobobook.co.kr/detail/S000001810495
 
 
 
@@ -38,6 +38,12 @@
 
 
 
+## 예제 프로젝트
 
+* [ddd_start_study](ddd_start_study)
+
+  
 
 ## 후기
+
+* ...

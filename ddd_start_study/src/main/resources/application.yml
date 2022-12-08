@@ -1,0 +1,38 @@
+# application.yml
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localvmdb.mysql_8:3306/ddd_start_study?characterEncoding=utf8
+    username: ddduser
+    password: dddpass
+    hikari:
+      maximum-pool-size: 10
+  sql:
+    init:
+      mode: always
+  jpa:
+    open-in-view: false
+    hibernate:
+      naming:
+        physical-strategy: org.hibernate.boot.model.naming.PhysicalNamingStrategyStandardImpl
+    properties:
+      hibernate:
+        hbm2ddl:
+          "[import_files_sql_extractor]": org.hibernate.tool.schema.internal.script.MultiLineSqlScriptExtractor
+          "[charset_name]": UTF-8
+        "[format_sql]": true
+        "[show_sql]": true
+        dialect: org.hibernate.dialect.MySQLDialect # 로그상에 MySQL57을 사용한다고 하길레 명시적으로 설정
+      jakarta:
+        persistence:
+#          sharedCache:
+#            mode: ENABLE_SELECTIVE
+          schema-generation:
+            database:
+              action: drop-and-create
+            drop-source: metadata
+            create-source: metadata-then-script
+            create-script-source: sql/mysql/init-data-insert.sql
+logging:
+  level:
+    web: INFO # logback-spring.xml을 따로 설정해도 이 설정도 같이 적용된다.
