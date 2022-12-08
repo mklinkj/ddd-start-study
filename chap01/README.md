@@ -40,7 +40,7 @@ GRANT ALL PRIVILEGES ON ddd_start_study.* TO 'ddduser'@'%';
 
 * 프로젝트는 하나를 가지고 계속 내용 추가해나가는 것이므로, 단일 프로젝트로 두자!
 
-  * [ddd_start_study 프로젝트](../ddd_start_study)
+  * [ddd-start-study 프로젝트](../ddd-start-study)
 
 * 프로젝트 실행
 

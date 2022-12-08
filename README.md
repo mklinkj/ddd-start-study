@@ -40,7 +40,7 @@
 
 ## 예제 프로젝트
 
-* [ddd_start_study](ddd_start_study)
+* [ddd-start-study](ddd-start-study)
 
   
 

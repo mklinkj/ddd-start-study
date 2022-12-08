@@ -4,4 +4,4 @@ pluginManagement {
     gradlePluginPortal()
   }
 }
-rootProject.name = 'ddd_start_study'
+rootProject.name = 'ddd-start-study'
