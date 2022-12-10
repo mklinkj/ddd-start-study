@@ -38,6 +38,9 @@ spring:
             drop-source: metadata
             create-source: metadata-then-script
             create-script-source: sql/mysql/init-data-insert.sql
+  output:
+    ansi:
+      enabled: always # Windows 콘솔에서는 항상 켜주는게 낫겠다.
 logging:
   level:
     web: INFO # logback-spring.xml을 따로 설정해도 이 설정도 같이 적용된다.
