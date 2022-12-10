@@ -1,7 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
 <configuration>
+  <!-- https://github.com/spring-projects/spring-boot/blob/main/spring-boot-project/spring-boot/src/main/resources/org/springframework/boot/logging/logback/defaults.xml -->
+  <include resource="org/springframework/boot/logging/logback/defaults.xml"/>
   <appender name="CONSOLE" class="ch.qos.logback.core.ConsoleAppender">
     <encoder>
-      <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+      <pattern>%clr(%d{HH:mm:ss.SSS}){faint} %clr([%thread]){magenta} %clr(%-5level) %clr(%logger{36}){cyan} - %clr(%msg%n){faint}</pattern>
+      <!--<pattern>${CONSOLE_LOG_PATTERN}</pattern>-->
     </encoder>
   </appender>
 
